@@ -11,13 +11,12 @@ class Post(models.Model):
 
 
 
-class Meta:
-    odering=('-publish',)
+#class Meta:
+    #odering=('-publish',)
+
 
 def __str__(self):
-    return self.title
+    return self.title  
 
 
 
-
-# Create your models here.

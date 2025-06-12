@@ -1,9 +1,9 @@
-from django.shortcuts import render, get_list_or_404
+from django.shortcuts import render
 from  .models import Post
 
-def post_list(request):
-   
-    return render(request, 'blog/post/list.html')
+def home(request):
+    posts = Post.objects.all()  # Fetch all posts from the database
+    return render(request, 'blog/post/list.html', {'posts': posts})
 
 def about(request):
     return render(request, 'blog/post/detail.html')

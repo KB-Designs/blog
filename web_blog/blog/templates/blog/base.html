@@ -1,18 +1,32 @@
-{% load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title%} {%endblock%}</title>
-    <link href='{% static "css/blog.css" %}' rel="stylesheet" />
-  </head>
-  <body>
-    <div id="content">{% block content %} {%endblock%}</div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}My Blog{% endblock %}</title>
+  <link href="{% static 'blog/style.css' %}" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><a href="/">My Django Blog</a></h1>
+      <p class="tagline">A simple blog made with Django</p>
+    </header>
 
-    <div id="sidebar">
-      <h2>My blog</h2>
-      <p>This is my blog.</p>
-    </div>
-  </body>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+
+    <aside id="sidebar">
+      <h2>About</h2>
+      <p>Welcome to my personal blog where I share ideas, tutorials, and thoughts!</p>
+    </aside>
+
+    <footer>
+      <p>&copy; 2025 My Django Blog. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
 </html>

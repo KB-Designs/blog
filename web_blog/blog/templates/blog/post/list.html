@@ -1,14 +1,17 @@
-{% extends "blog/base.html" %} 
-{% block title %}My Blog{% endblock %}
+{% extends "blog/base.html" %}
+
+{% block title %}Home - My Blog{% endblock %}
+
 {% block content %}
-   <h1>My Blog</h1>
-  {% for post in posts %}
-        <h2>
-            <a href=> {{ post.title }} </a>
-        </h2>
-        <p class="date">
-          Published {{ post.date_posted }} by {{ post.author }}
-        </p>
-        {{ post.content|truncatewords:30|linebreaks }}
-  {% endfor %} 
+  <div class="post-list">
+    {% for post in posts %}
+      <div class="post">
+        <h2><a href="#">{{ post.title }}</a></h2>
+        <p class="meta">Published on {{ post.date_posted }} by {{ post.author }}</p>
+        <p class="preview">{{ post.content|truncatewords:30|linebreaks }}</p>
+      </div>
+    {% empty %}
+      <p>No blog posts yet.</p>
+    {% endfor %}
+  </div>
 {% endblock %}
