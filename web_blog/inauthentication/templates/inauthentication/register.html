@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+<div>
+    <form action="" method="POST" >
+        {% csrf_token%}
+        <legend>Join Today</legend>
+        {{ form }}
+
+        <div>
+            <button type="submit">Sign up</button>
+        </div>
+
+    </form>
+    <div>
+        <small>
+            Alreary have ana account? <a href="#">Sign In</a>
+        </small>
+    </div>
+</div>
+
+{% endblock %}

@@ -89,3 +89,49 @@ body, h1, h2, p, a {
     font-size: 14px;
   }
   
+  .auth-container {
+  width: 400px;
+  margin: 50px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.auth-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #007acc;
+}
+
+.auth-container form p {
+  margin-bottom: 15px;
+}
+
+.auth-container input[type="text"],
+.auth-container input[type="password"],
+.auth-container input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.auth-container input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background: #007acc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.auth-container input[type="submit"]:hover {
+  background: #005f99;
+}
+
+.auth-container .bottom-link {
+  text-align: center;
+  margin-top: 10px;
+}

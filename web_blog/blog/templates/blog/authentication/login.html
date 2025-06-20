@@ -1,11 +1,24 @@
 {% extends "blog/base.html" %}
-{% block title %}Log-in{% endblock %}
+{% load static %}
+{% block title %}Log In{% endblock %}
+
 {% block content %}
- <h1>Log-in</h1>
- <p>Please, use the following form to log-in:</p>
- <form method="post">
-   {{ form.as_p }}
-   {% csrf_token %}
-   <p><input type="submit" value="Log in"></p>
- </form>
+<link rel="stylesheet" href="{% static 'blog/auth.css' %}">
+<div class="auth-container">
+  <h1>Log In</h1>
+
+  {% if form.errors %}
+    <p style="color:red;">Invalid credentials. Please try again.</p>
+  {% endif %}
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p><input type="submit" value="Log in"></p>
+  </form>
+  <div class="bottom-link">
+    <p>Forgot password? <a href="{%url 'password_reset'%}">Reset</a></p>
+    <p>Don’t have an account? <a href="{% url 'register' %}">Register</a></p>
+  </div>
+</div>
 {% endblock %}
